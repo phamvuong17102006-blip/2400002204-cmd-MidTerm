@@ -1,0 +1,850 @@
+/* Quy tắc chung và khai báo biến màu */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    /* Bảng màu chủ đạo */
+    --blue-dark: #1a3a6b;
+    --blue-mid: #2557a7;
+    --blue-light: #e8f0fc;
+    --blue-hover: #278fd4;
+    --accent-hover: #0b7ac5;
+    --gray-dark: #1e1e2e;
+    --gray-mid: #5a5a72;
+    --gray-light: #f5f7fb;
+    --white: #ffffff;
+    --border: #dde3ee;
+    --tag-bg: #e8f0fc;
+    --tag-text: #2557a7;
+
+    /* Độ bóng và hiệu ứng chuyển động */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 12px rgba(37, 87, 167, 0.08);
+    --shadow-lg: 0 10px 30px rgba(37, 87, 167, 0.12);
+    --transition: all 0.3s ease;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+        url("backgroud.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: var(--gray-dark);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Font chữ cho các tiêu đề */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Poppins', sans-serif;
+    color: var(--gray-dark);
+    font-weight: 600;
+}
+
+/* Khung chứa nội dung chính */
+.main-content {
+    flex: 1 0 auto;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 24px 20px 48px;
+}
+
+/* Tiêu đề dùng chung cho các trang phụ */
+.page-header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 24px 20px;
+    background: linear-gradient(135deg, var(--white), var(--blue-light));
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.page-header:hover {
+    box-shadow: var(--shadow-md);
+}
+
+.page-header h1 {
+    font-size: 2.2rem;
+    color: var(--blue-dark);
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+
+.page-header p {
+    font-size: 0.95rem;
+    color: var(--gray-mid);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Chân trang */
+.site-footer {
+    flex-shrink: 0;
+    text-align: center;
+    padding: 24px 20px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-top: 1px solid var(--border);
+    width: 100%;
+}
+
+.site-footer p {
+    font-size: 0.85rem;
+    color: var(--gray-mid);
+}
+
+/* Thanh điều hướng menu */
+.navbar {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    z-index: 1000;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--blue-dark);
+    transition: transform 0.2s ease;
+}
+
+.nav-logo:hover {
+    transform: scale(1.02);
+}
+
+.logo-icon {
+    font-size: 1.4rem;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    list-style: none;
+}
+
+.nav-link {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 0.92rem;
+    color: var(--gray-mid);
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: var(--transition);
+}
+
+.nav-link:hover {
+    color: var(--blue-mid);
+    background: var(--blue-light);
+}
+
+.nav-link.active {
+    color: var(--white);
+    background: var(--blue-mid);
+    box-shadow: 0 4px 10px rgba(37, 87, 167, 0.2);
+}
+
+/* Nút bật tắt menu cho điện thoại */
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001;
+}
+
+.hamburger {
+    display: block;
+    width: 22px;
+    height: 2.5px;
+    background: var(--gray-dark);
+    position: relative;
+    transition: background 0.3s ease;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    position: absolute;
+    width: 22px;
+    height: 2.5px;
+    background: var(--gray-dark);
+    transition: all 0.3s ease;
+}
+
+.hamburger::before {
+    top: -7px;
+}
+
+.hamburger::after {
+    bottom: -7px;
+}
+
+.nav-toggle.active .hamburger {
+    background: transparent;
+}
+
+.nav-toggle.active .hamburger::before {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+.nav-toggle.active .hamburger::after {
+    transform: rotate(-45deg);
+    bottom: 0;
+}
+
+/* Trang sơ yếu lý lịch CV */
+.cv-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 40px 16px;
+}
+
+.cv {
+    background: var(--white);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(37, 87, 167, 0.08), 0 2px 8px rgba(37, 87, 167, 0.04);
+    max-width: 780px;
+    width: 100%;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cv:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 35px rgba(37, 87, 167, 0.12), 0 4px 12px rgba(37, 87, 167, 0.06);
+}
+
+.cv-header {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    padding: 36px 40px 30px;
+    border-bottom: 1px solid var(--border);
+}
+
+.avatar-wrap {
+    flex-shrink: 0;
+    width: 120px;
+    height: 120px;
+    border-radius: 16px;
+    background: var(--blue-light);
+    overflow: hidden;
+    border: 3px solid var(--blue-light);
+    box-shadow: 0 4px 12px rgba(37, 87, 167, 0.12);
+    transition: transform 0.3s ease;
+}
+
+.avatar-wrap:hover {
+    transform: scale(1.05) rotate(2deg);
+}
+
+.avatar-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.header-info h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--gray-dark);
+}
+
+.header-info .title {
+    font-size: 0.95rem;
+    color: var(--gray-mid);
+    margin-top: 4px;
+    font-weight: 500;
+}
+
+.contact-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 20px;
+    margin-top: 14px;
+}
+
+.contact-grid span {
+    font-size: 0.85rem;
+    color: var(--gray-mid);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.cv-body {
+    padding: 32px 40px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.cv-body section {
+    transition: transform 0.3s ease;
+}
+
+.cv-body section:hover {
+    transform: translateX(4px);
+}
+
+.section-label {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--blue-mid);
+    margin-bottom: 12px;
+    border-bottom: 2px solid var(--blue-light);
+    padding-bottom: 4px;
+    display: inline-block;
+}
+
+.profile-text {
+    font-size: 0.95rem;
+    line-height: 1.75;
+    color: var(--gray-dark);
+}
+
+.skills-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill-tag {
+    background: var(--tag-bg);
+    color: var(--tag-text);
+    border-radius: 999px;
+    padding: 6px 16px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border: 1px solid rgba(37, 87, 167, 0.08);
+    transition: all 0.2s ease;
+}
+
+.skill-tag:hover {
+    background: var(--blue-mid);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(37, 87, 167, 0.15);
+}
+
+.entry {
+    background: #fafbfc;
+    padding: 16px 20px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    transition: all 0.3s ease;
+}
+
+.entry:hover {
+    background: var(--white);
+    border-color: var(--blue-mid);
+    box-shadow: 0 4px 12px rgba(37, 87, 167, 0.05);
+}
+
+.entry+.entry {
+    margin-top: 16px;
+}
+
+.entry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.entry-title {
+    font-size: 0.98rem;
+    font-weight: 700;
+    color: var(--gray-dark);
+}
+
+.entry-desc {
+    font-size: 0.88rem;
+    color: var(--gray-mid);
+    line-height: 1.5;
+}
+
+.entry-link {
+    font-size: 0.85rem;
+    color: var(--blue-mid);
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 8px;
+    transition: color 0.2s ease;
+}
+
+.entry-link:hover {
+    color: var(--accent-hover);
+    text-decoration: underline;
+}
+
+/* Trang danh sách địa điểm du lịch */
+.travel-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 10px;
+}
+
+.card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--blue-hover);
+}
+
+.card-img-wrap {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+    background: var(--blue-light);
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.card:hover img {
+    transform: scale(1.06);
+}
+
+.card-content {
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card-content h2 {
+    font-size: 1.25rem;
+    color: var(--blue-dark);
+    margin-bottom: 10px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.card-content p {
+    font-size: 0.92rem;
+    color: var(--gray-mid);
+    line-height: 1.6;
+    text-align: justify;
+    margin: 0;
+}
+
+/* Trang trò chơi lật hình */
+.game-container {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    perspective: 1000px;
+    margin: 20px 0 30px;
+}
+
+.memory-card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.4s ease;
+    cursor: pointer;
+}
+
+.memory-card.flipped {
+    transform: rotateY(180deg);
+}
+
+.memory-card.matched {
+    transform: rotateY(180deg);
+    cursor: default;
+    pointer-events: none;
+}
+
+.card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border);
+}
+
+.card-front-face {
+    background: linear-gradient(135deg, var(--blue-mid), var(--blue-hover));
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    border-color: var(--blue-dark);
+}
+
+.card-front-face .pattern-globe {
+    font-size: 2rem;
+}
+
+.card-front-face .pattern-text {
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    opacity: 0.9;
+    font-family: 'Poppins', sans-serif;
+}
+
+.card-back-face {
+    background: var(--white);
+    transform: rotateY(180deg);
+    padding: 6px;
+}
+
+.card-back-face svg {
+    width: 90%;
+    height: 90%;
+    display: block;
+}
+
+.memory-card.matched .card-back-face {
+    border-color: #48bb78;
+    background: #f0fff4;
+}
+
+.game-controls {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 12px;
+}
+
+.btn-game {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: var(--transition);
+    border: none;
+    flex: 1;
+    max-width: 200px;
+}
+
+.btn-restart {
+    background: var(--blue-mid);
+    color: var(--white);
+    box-shadow: 0 4px 10px rgba(37, 87, 167, 0.12);
+}
+
+.btn-restart:hover {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+}
+
+.btn-home {
+    background: var(--white);
+    color: var(--gray-dark);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-sm);
+}
+
+.btn-home:hover {
+    background: var(--gray-light);
+    transform: translateY(-2px);
+    border-color: var(--gray-mid);
+}
+
+/* Khung thông báo chiến thắng */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(30, 30, 46, 0.5);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.modal-overlay.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-content {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 30px 24px;
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--border);
+    transform: scale(0.9) translateY(10px);
+    transition: transform 0.3s ease;
+}
+
+.modal-overlay.show .modal-content {
+    transform: scale(1) translateY(0);
+}
+
+.modal-badge {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.modal-content h2 {
+    color: var(--blue-dark);
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.modal-desc {
+    color: var(--gray-mid);
+    font-size: 0.9rem;
+    margin-bottom: 24px;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+
+.modal-btn {
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: var(--transition);
+    border: none;
+    flex: 1;
+}
+
+.modal-btn-primary {
+    background: var(--blue-mid);
+    color: var(--white);
+}
+
+.modal-btn-primary:hover {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+}
+
+.modal-btn-secondary {
+    background: var(--gray-light);
+    color: var(--gray-dark);
+    border: 1px solid var(--border);
+}
+
+.modal-btn-secondary:hover {
+    background: var(--border);
+    transform: translateY(-2px);
+}
+
+/* Cấu hình hiển thị trên điện thoại và máy tính bảng */
+
+/* Menu cho màn hình nhỏ */
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: block;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 260px;
+        height: 100vh;
+        background: var(--white);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: stretch;
+        padding: 90px 24px 30px;
+        gap: 12px;
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+        transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 999;
+    }
+
+    .nav-menu.active {
+        right: 0;
+    }
+
+    .nav-link {
+        display: block;
+        padding: 12px 20px;
+        text-align: left;
+        border-radius: 8px;
+    }
+}
+
+/* Giao diện CV di động */
+@media (max-width: 600px) {
+    .cv-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 30px 20px 20px;
+        gap: 18px;
+    }
+
+    .contact-grid {
+        justify-content: center;
+    }
+
+    .cv-body {
+        padding: 24px 20px 30px;
+        gap: 24px;
+    }
+}
+
+/* Bố cục trang du lịch trên máy tính bảng */
+@media (max-width: 900px) {
+    .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+}
+
+/* Bố cục trang du lịch trên điện thoại */
+@media (max-width: 600px) {
+    .card-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .card-img-wrap {
+        height: 180px;
+    }
+}
+
+/* Bàn chơi game trên điện thoại */
+@media (max-width: 600px) {
+    .game-board {
+        gap: 8px;
+        margin: 15px 0 25px;
+    }
+
+    .card-front-face .pattern-globe {
+        font-size: 1.5rem;
+    }
+
+    .card-front-face .pattern-text {
+        font-size: 0.5rem;
+        letter-spacing: 0.5px;
+    }
+
+    .btn-game {
+        font-size: 0.85rem;
+        padding: 8px 16px;
+    }
+
+    .modal-content {
+        padding: 24px 20px;
+    }
+}

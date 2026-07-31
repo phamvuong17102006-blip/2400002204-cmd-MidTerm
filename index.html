@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Cá Nhân</title>
+    <!-- Nhập thiết kế hệ thống chung -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Thanh Điều Hướng Chung -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-icon">💼</span>
+                <span>Vương Portfolio</span>
+            </a>
+
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+
+            <nav class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link active">Hồ Sơ Cá Nhân</a>
+                <a href="travel.html" class="nav-link">Điểm Đến Du Lịch</a>
+                <a href="memory-game.html" class="nav-link">Trò Chơi Trí Nhớ</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Khu Vực Nội Dung Chính -->
+    <main class="main-content">
+        <!-- Trang Hồ Sơ Cá Nhân -->
+        <div id="page-home" class="cv-wrapper">
+            <div class="cv">
+                <!-- HEADER -->
+                <div class="cv-header">
+                    <div class="avatar-wrap">
+                        <img src="vuong.png" alt="avatar">
+                    </div>
+                    <div class="header-info">
+                        <h1>Phạm Hoàng Minh Vương</h1>
+                        <p class="title">Lập trình viên Frontend (Sinh viên)</p>
+                        <div class="contact-grid">
+                            <span>Email: Vuong206@gmail.com</span>
+                            <span>Điện thoại: 0778138658</span>
+                            <span>Địa chỉ: TP.Hồ Chí Minh</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- BODY -->
+                <div class="cv-body">
+                    <!-- PROFILE-->
+                    <section>
+                        <h2 class="section-label">Giới thiệu</h2>
+                        <p class="profile-text">
+                            Tôi là sinh viên năm 2 ngành Công nghệ Thông tin, có niềm đam mê với phát triển giao diện
+                            web.
+                            Hiện đang tập trung học và phát triển kỹ năng HTML, CSS, JavaScript.
+                        </p>
+                    </section>
+                    <!-- SKILLS -->
+                    <section>
+                        <h2 class="section-label">Kỹ năng</h2>
+                        <div class="skills-row">
+                            <span class="skill-tag">HTML</span>
+                            <span class="skill-tag">CSS</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">Figma</span>
+                            <span class="skill-tag">Làm việc nhóm</span>
+                            <span class="skill-tag">Tự học</span>
+                            <span class="skill-tag">Giải quyết vấn đề</span>
+                            <span class="skill-tag">Tiếng Anh (đọc hiểu)</span>
+                        </div>
+                    </section>
+                    <!-- CAREER -->
+                    <section>
+                        <h2 class="section-label">Mục tiêu nghề nghiệp</h2>
+                        <p class="profile-text">
+                            Định hướng trở thành Frontend Developer, tập trung phát triển giao diện web và cải thiện
+                            trải nghiệm
+                            người dùng.
+                        </p>
+                    </section>
+                    <!-- PROJECTS -->
+                    <section>
+                        <h2 class="section-label">Dự án</h2>
+
+                        <div class="entry">
+                            <div class="entry-header">
+                                <span class="entry-title">Website Portfolio cá nhân</span>
+                            </div>
+                            <p class="entry-desc">
+                                Thiết kế và xây dựng bằng HTML, CSS, JavaScript.
+                            </p>
+                        </div>
+                        <div class="entry">
+                            <div class="entry-header">
+                                <span class="entry-title">Website bán hàng / Landing page</span>
+                            </div>
+                            <p class="entry-desc">
+                                Xây dựng giao diện và bố cục trang bằng HTML, CSS.
+                            </p>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+        <!-- Trang Điểm Đến Du Lịch -->
+        <div id="page-travel" class="travel-container" style="display: none;">
+            <!-- Tiêu đề trang -->
+            <header class="page-header">
+                <h1>Địa Điểm Du Lịch Hàng Đầu</h1>
+                <p>Khám phá vẻ đẹp, văn hóa truyền thống, ẩm thực độc đáo và kiến trúc nghệ thuật đặc sắc của những
+                    thành phố du lịch nổi tiếng trên khắp thế giới.</p>
+            </header>
+
+            <!-- Danh sách địa điểm du lịch -->
+            <div class="card-grid">
+
+                <!-- Paris -->
+                <div class="card">
+                    <div class="card-img-wrap">
+                        <img src="paris.jpg" alt="Paris, France">
+                    </div>
+                    <div class="card-content">
+                        <h2>Paris, Pháp</h2>
+                        <p>
+                            Trải nghiệm bầu không khí lãng mạn của "Kinh đô Ánh sáng".
+                            Ghé thăm tháp Eiffel huyền thoại, khám phá các bảo tàng nghệ thuật nổi tiếng thế giới,
+                            thưởng thức ẩm thực Pháp tinh tế và tản bộ trên những con phố cổ kính thanh lịch.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Bali -->
+                <div class="card">
+                    <div class="card-img-wrap">
+                        <img src="bali.jpg" alt="Bali, Indonesia">
+                    </div>
+                    <div class="card-content">
+                        <h2>Bali, Indonesia</h2>
+                        <p>
+                            Hòa mình vào thiên đường nhiệt đới với những bãi biển xanh trong vắt, ruộng bậc thang xanh
+                            mướt trải dài, các ngôi đền cổ kính linh thiêng và hoàng hôn rực rỡ tuyệt đẹp trên đảo ngọc.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- New York -->
+                <div class="card">
+                    <div class="card-img-wrap">
+                        <img src="newyork.jpg" alt="New York, USA">
+                    </div>
+                    <div class="card-content">
+                        <h2>New York, Hoa Kỳ</h2>
+                        <p>
+                            Khám phá "thành phố không bao giờ ngủ". Từ Quảng trường Thời đại rực rỡ ánh đèn, Công viên
+                            Trung tâm thơ mộng, đến các show diễn Broadway hoành tráng và Tượng Nữ thần Tự do biểu
+                            tượng.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- London -->
+                <div class="card">
+                    <div class="card-img-wrap">
+                        <img src="london.png" alt="London, United Kingdom">
+                    </div>
+                    <div class="card-content">
+                        <h2>London, Vương Quốc Anh</h2>
+                        <p>
+                            Khám phá di sản hoàng gia lâu đời qua cung điện Buckingham cổ kính, tháp đồng hồ Big Ben,
+                            cầu Tower Bridge lịch sử, công viên Hyde Park rộng lớn và các khu phố mua sắm sầm uất bậc
+                            nhất.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Tokyo -->
+                <div class="card">
+                    <div class="card-img-wrap">
+                        <img src="tokyo.png" alt="Tokyo, Japan">
+                    </div>
+                    <div class="card-content">
+                        <h2>Tokyo, Nhật Bản</h2>
+                        <p>
+                            Trải nghiệm sự giao thoa độc đáo giữa tương lai và truyền thống.
+                            Những tòa nhà chọc trời hiện đại nằm cạnh các ngôi đền cổ xưa, văn hóa anime đầy sắc màu, ẩm
+                            thực sushi tươi ngon và ngắm nhìn núi Phú Sĩ hùng vĩ.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Hanoi -->
+                <div class="card">
+                    <div class="card-img-wrap">
+                        <img src="hanoi.png" alt="Hanoi, Vietnam">
+                    </div>
+                    <div class="card-content">
+                        <h2>Hà Nội, Việt Nam</h2>
+                        <p>
+                            Tản bộ quanh 36 phố phường cổ kính ngàn năm văn hiến của thủ đô, thưởng thức những món ăn
+                            đường phố nổi phố nổi tiếng thế giới như phở, bún chả, thư giãn bên Hồ Gươm và ghé thăm những di
+                            tích lịch sử lâu đời.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Trang Trò Chơi Trí Nhớ -->
+        <div id="page-game" class="game-container" style="display: none;">
+            <!-- Phần giới thiệu trò chơi -->
+            <header class="page-header">
+                <h1>Trò Chơi Trí Nhớ</h1>
+                <p>Tìm các cặp thẻ bài giống nhau hiển thị địa danh du lịch và ẩm thực nổi tiếng.</p>
+            </header>
+
+            <!-- Khung Bàn Cờ 4x4 (Thẻ Bài được tự động sinh bằng Javascript) -->
+            <div class="game-board" id="game-board">
+                <!-- Thẻ bài sẽ được thêm vào đây bằng code game.js -->
+            </div>
+
+            <!-- Nút Điều Khiển Reset/Home -->
+            <div class="game-controls">
+                <button class="btn-game btn-restart" id="restart-btn">
+                    <span>🔄</span> Chơi Lại
+                </button>
+                <a href="index.html" class="btn-game btn-home">
+                    <span>🏠</span> Về Trang Chủ
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Bảng Popup Chúc Mừng Chiến Thắng (Victory Modal Overlay) -->
+    <div class="modal-overlay" id="congrats-modal">
+        <div class="modal-content">
+            <span class="modal-badge">🏆</span>
+            <h2>Chiến Thắng!</h2>
+            <p class="modal-desc">Chúc mừng bạn đã tìm được toàn bộ các cặp hình ảnh trùng khớp về địa danh du lịch và ẩm thực thế giới.</p>
+            
+            <!-- Hành động nút bấm trong popup -->
+            <div class="modal-actions">
+                <button class="modal-btn modal-btn-primary" id="play-again-btn">Chơi lại</button>
+                <a href="index.html" class="modal-btn modal-btn-secondary">Trang chủ</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chân trang -->
+    <footer class="site-footer">
+    </footer>
+
+    <!-- Lập trình menu điều hướng di động, routing và logic trò chơi -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
